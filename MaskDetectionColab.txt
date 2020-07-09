@@ -1,0 +1,38 @@
+!git clone https://github.com/fizyr/keras-retinanet.git
+cd keras-retinanet/
+!pip install .
+!python setup.py build_ext --inplace
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+!cp -r "/content/drive/My Drive/Desarrollos/MaskDetection/images" "/content/keras-retinanet"
+!cp -r "/content/drive/My Drive/Desarrollos/MaskDetection/annotations.csv" "/content/keras-retinanet"
+!cp -r "/content/drive/My Drive/Desarrollos/MaskDetection/annotations_test.csv" "/content/keras-retinanet"
+!cp -r "/content/drive/My Drive/Desarrollos/MaskDetection/classes.csv" "/content/keras-retinanet" 
+
+import numpy as np
+import pandas as pd
+import seaborn as sns
+from pylab import rcParams
+import matplotlib.pyplot as plt
+from matplotlib import rc
+from pandas.plotting import register_matplotlib_converters
+from sklearn.model_selection import train_test_split
+import urllib
+import os
+import csv
+import cv2
+import time
+from PIL import Image
+
+from keras.models import load_model
+from keras_retinanet import models
+from keras_retinanet.utils.image import read_image_bgr, preprocess_image, resize_image
+from keras_retinanet.utils.visualization import draw_box, draw_caption
+from keras_retinanet.utils.colors import label_color
+
+URL_MODEL = 'https://github.com/fizyr/keras-retinanet/releases/download/0.5.1/resnet50_coco_best_v2.1.0.h5'
+urllib.request.urlretrieve(URL_MODEL, './snapshots/model.h5')
+
+!keras_retinanet/bin/train.py --freeze-backbone --random-transform --weights snapshots/resnet50_csv_99.h5 --batch-size 8 --steps 88 --epochs 100 csv annotations.csv classes.csv
