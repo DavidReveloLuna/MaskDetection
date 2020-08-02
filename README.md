@@ -21,6 +21,8 @@ En este proyecto realizamos la detección de tapabocas en video usando el modelo
       pyrcc5 -o libs/resources.py resources.qrc
       python labelImg.py
 
+### Dataset modificado a partir de:
+		https://medium.com/face-mask-detector-using-deep-learning-yolov3/face-mask-detector-using-deep-learning-yolov3-209b57f77e92
 
 ### Descripción del directorio
 
