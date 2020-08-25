@@ -10,7 +10,7 @@ En este proyecto realizamos la detección de tapabocas en video usando el modelo
       _Jupyter notebook o google colab
       _Tensorflow 
       _Keras
-      _Keras Retinanet (https://github.com/fizyr/keras-retinanet)
+      _Keras Retinanet https://github.com/DavidReveloLuna/keras-retinanet
       _labelImg (https://github.com/tzutalin/labelImg.git)
 
 ### Instalación labelImg (Windows + Anaconda)🔧
