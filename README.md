@@ -44,3 +44,6 @@ En este proyecto realizamos la detección de tapabocas en video usando el modelo
 4. MaskDetectionColab.txt contiene el codigo para google colab que entrena la red neuronal
 
 5. MaskDetection.ipynb contiene el codigo para jupyter notebook donde probamos la red en imágenes y en video
+
+# **Canal de Youtube**
+[Click aquì pare ver mi canal de YOUTUBE](https://www.youtube.com/channel/UCr_dJOULDvSXMHA1PSHy2rg)
